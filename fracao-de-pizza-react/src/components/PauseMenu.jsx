@@ -4,7 +4,7 @@ import { Play, RotateCcw, Volume2, VolumeX } from 'lucide-react';
 /**
  * PauseMenu: Menu suspenso durante a pausa da partida.
  */
-export default function PauseMenu({ onResume, onRestartDay, isMuted, onToggleMute }) {
+export default function PauseMenu({ onResume, onRestartDay, onRestartGame, isMuted, onToggleMute }) {
   return (
     <div className="fixed inset-0 bg-stone-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in">
       <div className="bg-amber-950 border-4 border-amber-500 rounded-3xl p-6 max-w-sm w-full shadow-2xl text-amber-100 flex flex-col items-center text-center">
@@ -30,6 +30,15 @@ export default function PauseMenu({ onResume, onRestartDay, isMuted, onToggleMut
           >
             <RotateCcw size={18} />
             <span>Reiniciar este Dia</span>
+          </button>
+
+          {/* Reiniciar Jogo */}
+          <button
+            onClick={onRestartGame}
+            className="w-full py-3 bg-red-800 hover:bg-red-700 text-red-100 font-bold rounded-xl border border-red-600 flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-md"
+          >
+            <RotateCcw size={18} />
+            <span>Reiniciar o Jogo</span>
           </button>
 
           {/* Som */}

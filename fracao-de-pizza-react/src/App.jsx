@@ -107,6 +107,7 @@ export default function App() {
         <PauseMenu
           onResume={togglePause}
           onRestartDay={startGame}
+          onRestartGame={startGame}
           isMuted={isAudioMuted}
           onToggleMute={toggleMute}
         />
