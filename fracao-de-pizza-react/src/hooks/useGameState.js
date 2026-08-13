@@ -347,6 +347,18 @@ export function useGameState() {
   }, [resetPizzaSlices]);
 
   /**
+   * Reinicia o dia atual.
+   */
+   const restartStage = useCallback(() => {
+  setTimeLeft(STAGE_STATES[currentStage - 1].total_time);
+  setMoney(0.0);
+  setOrders([]);
+  resetPizzaSlices(4);
+  setSliceCount(4);
+  setGameStatus('PLAYING');
+  }, [currentStage, resetPizzaSlices]);
+
+  /**
    * Carrega o próximo dia de trabalho após atingir a meta.
    */
   const nextStage = useCallback(() => {
@@ -394,6 +406,7 @@ export function useGameState() {
     popups,
     isAudioMuted,
     startGame,
+    restartStage,
     nextStage,
     togglePause,
     toggleMute,

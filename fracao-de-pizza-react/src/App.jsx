@@ -28,6 +28,7 @@ export default function App() {
     popups,
     isAudioMuted,
     startGame,
+    restartStage,
     nextStage,
     togglePause,
     toggleMute,
@@ -106,7 +107,7 @@ export default function App() {
       {gameStatus === 'PAUSED' && (
         <PauseMenu
           onResume={togglePause}
-          onRestartDay={startGame}
+          onRestartDay={restartStage}
           onRestartGame={startGame}
           isMuted={isAudioMuted}
           onToggleMute={toggleMute}
